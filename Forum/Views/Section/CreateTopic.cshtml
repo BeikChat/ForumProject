@@ -1,0 +1,18 @@
+﻿@model TopicModel
+
+@{
+    ViewBag.Title = "Create Topic";
+    Layout = "_Layout";
+}
+
+<h2>Create new Topic</h2>
+<form name="Topic">
+    <h3>Topic</h3>
+    <input name="Name" placeholder="Name of Topic"/><br>
+    <input name="SectionName" placeholder="Name of parent Section"><br>
+    <input name="Description" placeholder="Description"><br>
+    <button type="submit" formmethod="post" name="Create">Create topic</button>
+    <button type="reset" name="Reset">Reset</button>
+</form>
+
+<button>Some button</button>

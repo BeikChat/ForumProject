@@ -1,0 +1,14 @@
+﻿@model List<Forum.Data.Db.DbForumSection>
+
+@{
+    Layout = "_Layout";
+}
+
+<a asp-area="" asp-controller="Section" asp-action="CreateTopic">Create Topic</a>
+<a asp-area="" asp-controller="Section" asp-action="CreateSection">Create Secton</a>
+<ul>
+    @foreach (var section in Model)
+    {
+        <li>@Html.DisplayFor(x => section.Name)</li>
+    }
+</ul>

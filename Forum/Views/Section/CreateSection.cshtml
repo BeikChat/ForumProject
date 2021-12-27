@@ -1,0 +1,16 @@
+﻿@model SectionModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Create new Section</h2>
+<form asp-area="" asp-controller="Section" asp-action="CreateSection">
+    <h3>Topic</h3>
+    <input name="Name" placeholder="Name of Topic" value="@Model.Name"/><br>
+    <input name="ParentName" placeholder="Name of parent Section" value="@Model.ParentName"><br>
+    <input name="Description" placeholder="Description" value="@Model.Description"><br>
+    <button type="submit" formmethod="post">Create section</button>
+    <button type="reset" name="Reset">Reset</button>
+</form>
+<button>Some button</button>

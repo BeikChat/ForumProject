@@ -1,0 +1,13 @@
+*.suo
+*.user
+bin
+obj
+packages
+*.cache
+.vs
+*.vsp
+*.psess
+*.tmp
+*.metaproj
+*.log
+.idea
