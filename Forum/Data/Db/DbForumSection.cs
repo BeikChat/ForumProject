@@ -1,25 +1,34 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Identity;
 
 namespace Forum.Data.Db
 {
+	[Table("ForumSection")]
 	public class DbForumSection
 	{
+		[Key]
 		public Guid Id { get; set; }
 		
+		[Column]
 		public Guid? ParentId { get; set; }
 		
-		public SectionType Type { get; set; }
+		[Column]
+		public string Type { get; set; }
 		
-		[NotNull]
+		[Column, NotNull]
 		public string Name { get; set; }
 		
+		[Column]
 		public DateTime DateCreated { get; set; }
 		
-		[AllowNull]
+		[Column, AllowNull]
 		public string Description { get; set; }
 		
-		public Guid AuthorId { get; set; }
+		[Column]
+		public string AuthorId { get; set; }
 		
 	}
 }

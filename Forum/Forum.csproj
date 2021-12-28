@@ -18,4 +18,14 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Section\Components\Message\View.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Message\Shared\_CreateMessage.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Message\Shared\_Message.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\Message" />
+    </ItemGroup>
+
 </Project>

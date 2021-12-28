@@ -1,0 +1,37 @@
+﻿@{
+    var createMessageUrl = Url.Action("CreateMessage", "Message");
+}
+<div class="container">
+    <div class="row">
+        <span>Добавить ответ</span>
+    </div>
+    <div class="row card-group">
+        <div class="col-sm-3 card-header">
+            <div style="width: 64px; height: 64px; border: 3px solid #721c24;"></div>
+        </div>
+
+        <div class="col-sm-8 card-body">
+            <div class="d-inline">
+                <textarea class="input-group-text" style="resize: none; width: 100%" id="text" placeholder="Enter text"></textarea>
+            </div>
+            <div class="d-inline-block align-self-end">
+                <button id="create" class="btn-primary">Отправить</button>
+            </div>
+        </div>
+
+        <script>
+            $(function(){
+                var text = $('#text')[0];
+                
+                $('#create').on('click', function() {
+                    text.disable = true;
+                    $.post('@createMessageUrl', { Text: text.value, ForumSectionId: '@(ViewBag.sectionId)' })
+                    .done(function(data, status) {
+                        text.disable = false;
+                        window.location.reload();
+                    })
+                });
+            });
+        </script>
+    </div>
+</div>

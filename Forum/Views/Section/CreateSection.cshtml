@@ -1,6 +1,7 @@
 ﻿@model SectionModel
 
 @{
+    ViewBag.Title = "Create Section";
     Layout = "_Layout";
 }
 
@@ -9,8 +10,8 @@
     <h3>Topic</h3>
     <input name="Name" placeholder="Name of Topic" value="@Model.Name"/><br>
     <input name="ParentName" placeholder="Name of parent Section" value="@Model.ParentName"><br>
+    <input name="Type" placeholder="Type of Section" value="@Model.Type"><br>
     <input name="Description" placeholder="Description" value="@Model.Description"><br>
     <button type="submit" formmethod="post">Create section</button>
     <button type="reset" name="Reset">Reset</button>
 </form>
-<button>Some button</button>

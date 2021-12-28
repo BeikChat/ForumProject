@@ -1,0 +1,15 @@
+﻿@model MessageModel
+
+<div class="row card-group">
+    <div class="col-sm-3 card-header" style="border: thin solid darkblue">
+        <div style="width: 64px; height: 64px; border: 3px solid #007bff;"></div>
+        <span>@Model.AuthorName</span>
+    </div>
+
+    <div class="col-sm-8 card-body" style="border: thin solid darkblue">
+        <div>
+            <span class="border-bottom border-dark">@Model.Text</span>
+        </div>
+        <span>@Model.DateCreated</span>
+    </div>
+</div>

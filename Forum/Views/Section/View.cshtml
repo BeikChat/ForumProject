@@ -1,0 +1,26 @@
+﻿@model SectionFullInfoDto
+
+@{
+    ViewBag.Title = "Section View";
+    Layout = "_Layout";
+}
+<div>
+    <h2>@Model.ShortInfo.Name</h2>
+    <div>
+        <p>@Model.ShortInfo.AuthorName</p><br/>
+        <p>@Model.ShortInfo.ParentName</p>
+    </div>
+    <div class="row">
+        <span class="col-sm-2">Описание</span>
+        <p class="col-sm-6">@Model.ShortInfo.Description</p>
+    </div>
+</div>
+
+@await Html.PartialAsync("Shared/_CreateMessage")
+
+<div class="container">
+    @foreach (var message in Model.Messages)
+    {
+        @(await Html.PartialAsync("Shared/_Message", message))
+    }
+</div>

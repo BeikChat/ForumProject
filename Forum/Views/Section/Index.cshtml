@@ -1,14 +1,30 @@
-﻿@model List<Forum.Data.Db.DbForumSection>
+﻿@model List<Forum.Models.SectionShortInfoDto>
 
 @{
     Layout = "_Layout";
 }
 
-<a asp-area="" asp-controller="Section" asp-action="CreateTopic">Create Topic</a>
-<a asp-area="" asp-controller="Section" asp-action="CreateSection">Create Secton</a>
+<a asp-area="" asp-controller="Section" asp-action="CreateSection" asp-route-sectionType="Topic">Create Topic</a><br/>
+<a asp-area="" asp-controller="Section" asp-action="CreateSection" asp-route-sectionType="Section">Create Secton</a>
 <ul>
-    @foreach (var section in Model)
+    @if (Model != null)
     {
-        <li>@Html.DisplayFor(x => section.Name)</li>
+        <h2>@(ViewBag.selectedSectionName != null ? ViewBag.selectedSectionName : "Main")</h2>
+        <ul>
+        @foreach (var section in Model)
+        {
+            <li>
+                <a asp-area="" asp-controller="Section" asp-action="View" asp-route-sectionId="@(section.Id)">@(section.Name)</a>
+            </li>
+            <ul>
+                @foreach (SectionShortInfoDto childSection in ViewBag.childSections[section.Id])
+                {
+                    <li>
+                        <a asp-area="" asp-controller="Section" asp-action="View" asp-route-sectionId="@(childSection.Id)">@(childSection.Name)</a>
+                    </li>
+                }
+            </ul>
+        }
+        </ul>
     }
 </ul>
